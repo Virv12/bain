@@ -59,6 +59,7 @@ REFRESH=5
 COLOR_CHARGE='#5BC236'
 COLOR_CHARGING='#FFFF00'
 COLOR_UNCHARGE='#BF131C'
+IMG_DIR="$(cd "$(dirname "$0")" >/dev/null 2>&1; pwd -P)/images"
 
 while [ "$#" -gt 0 ]; do
 	case "$1" in
@@ -68,7 +69,7 @@ while [ "$#" -gt 0 ]; do
 		-g|--charging) COLOR_CHARGING="$2"; shift 2;;
 		-u|--uncharge) COLOR_UNCHARGE="$2"; shift 2;;
 		-r|--refresh) REFRESH="$2"; shift 2;;
-		*) file="$HOME/.bain/images/$1.png"; shift 1;;
+		*) file="$IMG_DIR/$1.png"; shift 1;;
 	esac
 done
 
